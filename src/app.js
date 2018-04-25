@@ -1,36 +1,3 @@
-// "use strict"
-// import React from 'react';
-// import {render} from 'react-dom';
-// import {Provider} from 'react-redux';
-
-
-// import {applyMiddleWare,createStore} from 'redux';
-// import logger from 'react-logger';
-
-// // Import Combined Reducers
-// import reducers from './reducers/index';
-
-// //Import actions 
-
-// import {addToCart} from './actions/cartActions';
-// import {postBooks, updateBooks, deleteBooks} from './actions/bookActions';
-
-// //Import components
-// import BookList from '.components/pages/bookList';
-
-// //Step 1 Create the store!!
-
-// const middleWare = applyMiddleWare(logger);
-
-// const store = createStore(reducers,middleWare);
-
-
-// render(
-//     <Provider>
-//         <BookList/>
-//     </Provider>, document.getElementById('app')
-// );
-
 
 
 
