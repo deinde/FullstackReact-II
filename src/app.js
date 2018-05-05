@@ -14,6 +14,9 @@ import logger from 'redux-logger';
 import reducers from './reducers/index';
 
 import BooksList from './components/pages/booksList';
+
+
+
 //import {postToBooks} from './actions/bookActions';
 
 
@@ -21,9 +24,11 @@ import {addToCart} from './actions/cartActions';
 import {postToBooks,deleteBooks,updateBooks,talk} from './actions/bookActions';
 //import {talk} from './actions/bookActions';
 
-//Create the store
-const middleware = applyMiddleware(logger);
-const store = createStore(reducers,middleware);
+
+const store = createStore(
+    reducers,
+    applyMiddleware(logger)
+);
 
 
 
@@ -32,7 +37,7 @@ const store = createStore(reducers,middleware);
 render(
   <Provider store = {store} >
     <BooksList />
-  </Provider>, document.getElementById('app')
+ </Provider>, document.getElementById('app')
 
 
   );

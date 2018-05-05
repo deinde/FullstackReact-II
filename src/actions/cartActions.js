@@ -12,9 +12,19 @@ export function addToCart(book){
 
 
 
-export function deleteFromCart(book){
+export function deleteFromCart(cart){
     return {
     	type:"DELETE_FROM_CART",
-    	payload:book
+    	payload:cart
+    }
+}
+
+//UPDATEING THE QUANTITHY REALLY!!
+export function updateCart(_id,unit){
+    return{
+        type:"UPDATE_CART",
+        _id:_id,
+        unit:unit
+       
     }
 }

@@ -1,25 +1,24 @@
 'use strict';
 
 
-
 export function booksReducers(state={
     books:[
     {
-        id:1,
+        _id:1,
         title:'This is another Thing',
         description:'Cool story bro',
         price:100
        
         },
         {
-        id:2,
+        _id:2,
         title:'Stussy Crew',
         description:'Yep thats it',
         price:47.00
            
         },
         {
-        id:3,
+        _id:3,
         title:'Three AMigos',
         description:'Yep thats it',
         price:207.00
@@ -53,7 +52,7 @@ export function booksReducers(state={
         let indexOfDelete = currentBookToDelete.findIndex(
 
             function(x){
-                return x.id === action.payload.id;
+                return x.id === action.payload._id;
             }
         )
         //MAKE 2 COPIES OF 'currentBookToDelete' the first to cut and copy the part of the array up to the index
@@ -68,7 +67,7 @@ export function booksReducers(state={
         let currentBookToUpdate = [...state.books];
         let indexOfUpDate = currentBookToUpdate.findIndex(
             function(x){
-                return x.id = action.payload.id;
+                return x._id = action.payload._id;
             }
         )
         const newBookeToUpdate = {

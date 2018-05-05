@@ -30,8 +30,9 @@ export function deleteBooks(id){
 //GET BOOK
 
 export function getBooks(){
-    return{ 
-       type:"GET_BOOKS"
+    return {
+        type:'GET_BOOKS'
+        
     }
 }
 

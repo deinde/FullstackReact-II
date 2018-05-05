@@ -14,6 +14,11 @@ module.exports ={
     },
     mode:'development',
     watch:true,
+    resolve: {
+        alias: {
+            "react": __dirname + "/node_modules/react"
+        }
+    },
     module:{
        rules:[
             {
