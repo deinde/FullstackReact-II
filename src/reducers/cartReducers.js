@@ -55,3 +55,19 @@ export function cartReducers(state={carts:[]},action) {
    
 }
 
+// Lets total the amounts 
+
+export default function totals(payloadArr){
+  
+  const totalAmount = payloadArr.map(function(cartIndiv){
+    return cartIndiv.quantity * cartIndiv.price;
+  }).reduce(function(a,b){
+      return a + b;
+  },0)
+
+
+ return {
+     amount:totalAmount.toFixed(2)
+  }
+    
+}

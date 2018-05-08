@@ -125,7 +125,7 @@ class DeindeModal extends React.Component {
   renderModal() {
     return this.props.active ? <div style={expandModal}>
     <div style={innerMod}>
-        <button onClick={this.closeMod}>X</button>
+        <button onClick={this.props.close}>X</button>
 
         <h2>{this.props.heading}</h2>
         <div style={lines}>
@@ -139,7 +139,6 @@ class DeindeModal extends React.Component {
     return (
       <div style={container}>
         <div >
-          <button onClick={this.props.active} style={but} >Click</button>
           <CSSTransition {...styles} active={this.props.active}>
           {this.renderModal()}
           </CSSTransition>

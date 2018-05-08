@@ -5,6 +5,7 @@ import {bindActionCreators} from 'redux';
 import {Row, Col, Button, Label,ButtonGroup} from 'react-bootstrap';
 import {deleteFromCart,updateCart} from '../../actions/cartActions';
 import Modal from '../helperComponents.js/modal';
+import ModalTwo from '../anotherModal';
 
 let Well={
     border: '.5px solid',
@@ -90,9 +91,11 @@ class Cart extends React.Component{
 
     constructor(){
         super();
+        this.close = this.close.bind(this);
         this.state ={
            
-            active:false
+            active:false,
+            show:false
         }
     }
 
@@ -102,11 +105,33 @@ class Cart extends React.Component{
         console.log('open says me!!',this.state.active)
     }
 
+    
+
     close(){
+
         this.setState({active:false});
-        console.log('close says me!!',this.state.active)
 
     }
+/// this is second version of my modal
+    show(){
+        console.log('show being called',this.state.show)
+         this.setState({
+             ...this.state,
+             show:true
+         })
+         console.log('show called',{show})
+     }
+ 
+     closeShow(){
+         console.log('Closing Main Comp Now!!',this.state.show)
+ 
+         this.setState({
+             show:false
+         })
+     }
+
+
+
 
     render(){
          const cartListItems = this.props.cart.map(function(cartArr){
@@ -134,7 +159,10 @@ class Cart extends React.Component{
                  
            
 
-
+                 {/* <Modal active={this.state.active} close={this.close.bind(this)}>
+                  <h2>{cartArr.title}</h2>
+                </Modal> */}
+              
 
                 </div>
              )
@@ -155,8 +183,12 @@ class Cart extends React.Component{
                         </Button>
                     </Col>
                 </Row>
-                <Modal active={this.state.active}/>
-
+              
+               
+               <input onClick={this.show.bind(this)}  type='button' value='clicking'/>
+                <ModalTwo show={this.state.show}  close={this.closeShow.bind(this)} header='Header Hear' >
+               
+                </ModalTwo>  
             </div>   
        )
     }
