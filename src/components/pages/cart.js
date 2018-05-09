@@ -186,7 +186,7 @@ class Cart extends React.Component{
               
                
                <input onClick={this.show.bind(this)}  type='button' value='clicking'/>
-                <ModalTwo show={this.state.show}  close={this.closeShow.bind(this)} header='Header Hear' >
+                <ModalTwo totalAmount={this.props.totalAmount} show={this.state.show}  close={this.closeShow.bind(this)} header='Header Hear' >
                
                 </ModalTwo>  
             </div>   
@@ -197,7 +197,8 @@ class Cart extends React.Component{
 
 function mapStateToProps(state){
     return {
-      cart:state.carts.carts
+      cart:state.carts.carts,
+      totalAmount:state.carts.totalAmount
     }
 }
 

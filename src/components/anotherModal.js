@@ -48,6 +48,7 @@ export default class ModalTwo extends React.Component{
                         <h4>{this.props.header}</h4>
                         {this.props.children}
                         <div style={footer}>
+                        <h6>{this.props.totalAmount}</h6>
                         <button onClick={this.handleClose.bind(this)}>Close</button>
                         </div>
                     </div>

@@ -27,26 +27,7 @@ class BookListItem extends React.Component{
             quantity:1
         }]
 
-        
-        //  if(this.props.cart.length > 0){
-           
-        //    let _id = this.props._id;
-        // //    console.log('yo',this.props.cart)
-        //    this.props.updateCart(_id,1)
-           
-        //     let currentIndex = this.props.cart.findIndex(function(cart){
-        //       return cart._id === _id;
-        //       //if empty aka '-1' then add book
-        //       if(currentIndex === -1){
-        //           this.props.addToCart(book);
-        //         alert('its empty!!!')
-        //       }else{
-        //       // if a matching _id is found then only update the quantity!!!
-        //       this.props.updateCart(_id,1)
-        //       }
-            
-        //   }
-        // )
+
 
         // CHECK IF CART IS EMPTY
         if (this.props.cart.length > 0) {
