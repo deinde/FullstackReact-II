@@ -19,7 +19,7 @@ let Well={
 
 let Panel ={
     background: "#fff",
-    padding: "1rem",
+    padding: ".5rem",
     borderRadius: "5px",
     width: "100%",
     background:'#eeeaea',
@@ -57,6 +57,14 @@ let ml ={
 }
 let display={
     display:'none'
+}
+
+let headMb = {
+    marginLeft:'2.1rem'
+}
+
+let mbSmall = {
+    margin: "15px 1.1rem"
 }
 class Cart extends React.Component{
     
@@ -175,8 +183,8 @@ class Cart extends React.Component{
               
                 <Row>
                     <Col xs={12}>
-                        <h6>Total amount:</h6>
-                        <Button
+                        <h6 style={mbSmall}>Total amount:  {this.props.totalAmount}</h6>
+                        <Button style={mbSmall}
                         onClick={this.open.bind(this)}
                         bsStyle="success" bsSize="small">
                                     PROCEED TO CHECKOUT
@@ -184,10 +192,9 @@ class Cart extends React.Component{
                     </Col>
                 </Row>
               
-               
+              
                <input onClick={this.show.bind(this)}  type='button' value='clicking'/>
-                <ModalTwo totalAmount={this.props.totalAmount} show={this.state.show}  close={this.closeShow.bind(this)} header='Header Hear' >
-               
+                <ModalTwo  show={this.state.show}  close={this.closeShow.bind(this)} header='Header Hear' >
                 </ModalTwo>  
             </div>   
        )

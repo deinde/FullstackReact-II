@@ -15,7 +15,7 @@ import {booksReducers} from './bookReducers';
 
 
 //Here is where we actually cobine the reducers
-console.log('here are the book reducers',cartReducers)
+console.log('here are the CartReducers reducers',cartReducers)
 
 export default combineReducers({
    
