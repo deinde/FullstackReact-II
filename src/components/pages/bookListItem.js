@@ -2,19 +2,10 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {Row, Col, Button} from 'react-bootstrap';
+import {Row, Col, Button,Well} from 'react-bootstrap';
 import {addToCart,updateCart} from '../../actions/cartActions';
 
 
-let Well={
-    border: '.5px solid',
-    padding: '2rem',
-    borderRadius: '.5rem',
-    background: 'rgb(237, 234, 234)',
-    display: 'grid',
-    margin: '1rem',
-    justifyItems: 'start'
-}
 
 
 class BookListItem extends React.Component{
@@ -55,7 +46,7 @@ class BookListItem extends React.Component{
 
     render(){
         return(
-            <div style={Well}>
+            <Well >
               <Row>
                  <Col xs={12}>
                    <h6>{this.props.title}</h6>
@@ -64,7 +55,7 @@ class BookListItem extends React.Component{
                    <Button onClick={this.handleCart.bind(this)}   bsStyle='primary'>Buy Now</Button>
                  </Col>
               </Row>  
-            </div>
+            </Well>
         );
     }
 }

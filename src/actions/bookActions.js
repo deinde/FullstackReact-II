@@ -21,10 +21,18 @@ export function postBooks(book){
 
 //DELETE BOOK
 export function deleteBooks(id){
-    return {
+    
+     if(id =='select'){
+            return 
+        }else{
+           
+       
+       return {
         type:"DELETE_BOOK",
         payload:id
-    }
+      }
+
+   }   
 }
 
 //GET BOOK

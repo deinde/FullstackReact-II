@@ -14,6 +14,8 @@ import logger from 'redux-logger';
 import reducers from './reducers/index';
 
 import BooksList from './components/pages/booksList';
+import Menu from './components/pages/menu';
+import Footer from './components/pages/footer';
 
 
 
@@ -31,12 +33,13 @@ const store = createStore(
 );
 
 
-
-
-
 render(
   <Provider store = {store} >
+   <div>
+    <Menu />
     <BooksList />
+    <Footer/>
+   </div>
  </Provider>, document.getElementById('app')
 
 

@@ -52,7 +52,8 @@ export function booksReducers(state={
         let indexOfDelete = currentBookToDelete.findIndex(
 
             function(x){
-                return x.id === action.payload._id;
+                
+                return x._id == action.payload;
             }
         )
         //MAKE 2 COPIES OF 'currentBookToDelete' the first to cut and copy the part of the array up to the index

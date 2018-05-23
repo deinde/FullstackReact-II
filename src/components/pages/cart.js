@@ -68,7 +68,7 @@ let mbSmall = {
 }
 class Cart extends React.Component{
     
-    
+  
     
     onDelete(_id){
         const currentBookToBeDeleted = this.props.cart;
@@ -99,11 +99,13 @@ class Cart extends React.Component{
 
     constructor(){
         super();
+
         this.close = this.close.bind(this);
         this.state ={
            
             active:false,
-            show:false
+            show:false,
+            cart:false
         }
     }
 
@@ -111,6 +113,7 @@ class Cart extends React.Component{
         
         this.setState({active:true});
         console.log('open says me!!',this.state.active)
+
     }
 
     
@@ -139,8 +142,6 @@ class Cart extends React.Component{
      }
 
 
-
-
     render(){
          const cartListItems = this.props.cart.map(function(cartArr){
             return(
@@ -164,14 +165,6 @@ class Cart extends React.Component{
                        </ButtonGroup>
                       </Col>
                   </Row> 
-                 
-           
-
-                 {/* <Modal active={this.state.active} close={this.close.bind(this)}>
-                  <h2>{cartArr.title}</h2>
-                </Modal> */}
-              
-
                 </div>
              )
           }, this)
@@ -191,11 +184,9 @@ class Cart extends React.Component{
                         </Button>
                     </Col>
                 </Row>
-              
-              
-               <input onClick={this.show.bind(this)}  type='button' value='clicking'/>
-                <ModalTwo  show={this.state.show}  close={this.closeShow.bind(this)} header='Header Hear' >
-                </ModalTwo>  
+              <input onClick={this.show.bind(this)}  type='button' value='clicking'/>
+              <ModalTwo  show={this.state.show}  close={this.closeShow.bind(this)} header='Header Hear' >
+              </ModalTwo>  
             </div>   
        )
     }
@@ -215,6 +206,8 @@ function mapDispatchToProps(dispatch){
         updateCart:updateCart
     },dispatch)
 }
+
+
 
 export default connect(mapStateToProps,mapDispatchToProps)(Cart);
 
